@@ -1,3 +1,0 @@
-# coming soon...
-
-![BSAvis - workflow](workflow.png)

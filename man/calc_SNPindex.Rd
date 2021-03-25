@@ -18,7 +18,7 @@ A dataframe with the joint bulks
 }
 \description{
 This function is used to sparate (filter) the two bulks, and calculate their (SNP index) as follows:
-\deqn{SNPindex=as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)}. 
+\deqn{SNPindex=(AD_alt/(AD_ref) + AD_alt} 
 Bulks are finally joined together in a single data frame.
 }
 \examples{

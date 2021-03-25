@@ -9,7 +9,7 @@ extract_chromLength(chromID, meta)
 \arguments{
 \item{chromID}{chromosome ID}
 
-\item{vcf}{}
+\item{meta}{meta information}
 }
 \description{
 This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.

@@ -5,7 +5,7 @@
 #'
 #'
 #' @param chromID chromosome ID 
-#' @param vcf
+#' @param meta meta information 
 #'
 #' @export
 #' @examples

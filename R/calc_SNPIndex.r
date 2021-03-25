@@ -1,7 +1,7 @@
 #Read file and calculate SNP Index
 
-#'
-#' This function is used to sparate (filter) the two bulks, and calculate their (SNP index) as follows:
+#' @title Calculate (SNP index)
+#' @description This function is used to sparate (filter) the two bulks, and calculate their (SNP index) as follows:
 #' \deqn{SNPindex=as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)}. 
 #' Bulks are finally joined together in a single data frame.
 #'

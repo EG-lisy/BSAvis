@@ -1,8 +1,8 @@
-#Extract Chromosome Lenght
+#Extract Chromosome Length
 
+#' @title Calculate Chromosome Length
+#' @description This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.
 #'
-#' This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.
-#'this function extract chromosome length
 #'
 #' @param chromID chromosome ID 
 #' @param vcf

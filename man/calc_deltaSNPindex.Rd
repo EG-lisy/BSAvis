@@ -2,8 +2,7 @@
 % Please edit documentation in R/calc_deltaSNPindex.r
 \name{calc_deltaSNPindex}
 \alias{calc_deltaSNPindex}
-\title{This function is used to calculate the delta(SNP index) using the calculated mean of the M and WT indices, as follows:
-\deqn{mean_SNPindex.M - mean_SNPindex.WT)}.}
+\title{Calculate delta(SNP index)}
 \usage{
 calc_deltaSNPindex(vcf.df.window)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/slidingWindow.r
 \name{slidingWindow}
 \alias{slidingWindow}
-\title{This function allows to calculate the sliding window and the mean values of both bulks.}
+\title{Sliding Windows}
 \usage{
 slidingWindow(Chrom, chromLength, windowSize, windowStep, df)
 }

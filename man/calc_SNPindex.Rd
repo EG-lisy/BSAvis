@@ -2,9 +2,7 @@
 % Please edit documentation in R/calc_SNPIndex.r
 \name{calc_SNPindex}
 \alias{calc_SNPindex}
-\title{This function is used to sparate (filter) the two bulks, and calculate their (SNP index) as follows:
-\deqn{SNPindex=as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)}. 
-Bulks are finally joined together in a single data frame.}
+\title{Calculate (SNP index)}
 \usage{
 calc_SNPindex(vcf.df, WTbulk, Mbulk)
 }

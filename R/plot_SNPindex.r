@@ -1,6 +1,6 @@
 #Plot (SNP Index)
-#'
-#' This function allows plotting the (SNP Index).
+#' @title Plot (SNP index)
+#' @description This function allows plotting the (SNP Index).
 #'
 #' @param vcf.df.bulks.filt filtered data frame (containing both bulks)
 #' @param Chrom chromosome ID

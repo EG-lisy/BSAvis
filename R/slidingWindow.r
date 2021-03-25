@@ -1,6 +1,6 @@
 #Calculate sliding windows and mean values (M/WT bulks)
-#'
-#' This function allows to calculate the sliding window and the mean values of both bulks.
+#' @title Sliding Windows
+#' @description This function allows to calculate the sliding window and the mean values of both bulks.
 #'
 #' @param Chrom chromosome ID
 #' @param chromLength chromosome length

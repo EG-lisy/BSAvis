@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_deltaSNPindex.r
 \name{plot_deltaSNPindex}
 \alias{plot_deltaSNPindex}
-\title{This function allows plotting delta(SNP Index).}
+\title{Plot delta(SNP index)}
 \usage{
 plot_deltaSNPindex(vcf.df.bulks.filt, Chrom)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_SNPindex.r
 \name{plot_SNPindex}
 \alias{plot_SNPindex}
-\title{This function allows plotting the (SNP Index).}
+\title{Plot (SNP index)}
 \usage{
 plot_SNPindex(vcf.df.bulks.filt, Chrom)
 }

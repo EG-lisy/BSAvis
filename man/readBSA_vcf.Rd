@@ -2,10 +2,7 @@
 % Please edit documentation in R/readBSA_vcf.r
 \name{readBSA_vcf}
 \alias{readBSA_vcf}
-\title{This function allows to read a vcf file, which gets converted to a dataframe. 
-Format fields get separated as follows: AD, DP, GQ, GT
-Allelic depths (AD) get split into reference and alterate AD values (AD_ref and AD_alt)
-Finally, a list with the meta information gets stored, for plotting matters (i.e., extracting the chromosome lengths).}
+\title{Read vcf file}
 \usage{
 readBSA_vcf(file)
 }

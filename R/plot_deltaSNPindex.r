@@ -1,6 +1,6 @@
 #Plot delta(SNP Index)
-#'
-#' This function allows plotting delta(SNP Index).
+#' @title Plot delta(SNP index)
+#' @description This function allows plotting delta(SNP Index).
 #'
 #' @param vcf.df.bulks.filt filtered data frame (containing both bulks)
 #' @param Chrom chromosome ID

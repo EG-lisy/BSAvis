@@ -1,6 +1,6 @@
 #Filter variants 
-#'
-#' This function allows to filter variants.
+#' @title Filter Variants
+#' @description This function allows to filter variants.
 #'
 #' @param vcf.df.bulk vcf dataframe
 #' @param min_SNPindex min value allowed for the SNP index (default=0.3)

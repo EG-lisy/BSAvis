@@ -2,7 +2,7 @@
 % Please edit documentation in R/filter_variants.r
 \name{filter_variants}
 \alias{filter_variants}
-\title{This function allows to filter variants.}
+\title{Filter Variants}
 \usage{
 filter_variants(
   vcf.df.bulks,

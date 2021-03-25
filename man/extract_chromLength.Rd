@@ -2,8 +2,7 @@
 % Please edit documentation in R/extract_chromLength.r
 \name{extract_chromLength}
 \alias{extract_chromLength}
-\title{This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.
-this function extract chromosome length}
+\title{Calculate Chromosome Length}
 \usage{
 extract_chromLength(chromID, meta)
 }
@@ -14,7 +13,6 @@ extract_chromLength(chromID, meta)
 }
 \description{
 This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.
-this function extract chromosome length
 }
 \examples{
 extract_chromLength()

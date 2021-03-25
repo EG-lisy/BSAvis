@@ -2,7 +2,7 @@
 
 #' @title Calculate (SNP index)
 #' @description This function is used to sparate (filter) the two bulks, and calculate their (SNP index) as follows:
-#' \deqn{SNPindex=(AD_alt/(AD_ref) + AD_alt} 
+#' \deqn{SNPindex=AD_alt/(AD_ref + AD_alt)} 
 #' Bulks are finally joined together in a single data frame.
 #'
 #' @param vcf.df Data frame of the vcf file

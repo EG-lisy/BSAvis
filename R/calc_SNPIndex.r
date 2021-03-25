@@ -18,8 +18,8 @@
 calc_SNPindex <- function(vcf.df, WTbulk, Mbulk) {
 
   #Create dataframe for each bulk sample AND include a new column with SNP index
-  vcf.df.WTbulk <- vcf.df %>% dplyr::filter(Indiv==WT.bulk) %>% dplyr::mutate("SNPindex"= as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)))
-  vcf.df.Mbulk <- vcf.df %>% dplyr::filter(Indiv==M.bulk) %>% dplyr::mutate("SNPindex"= as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)))
+  vcf.df.WTbulk <- vcf.df %>% dplyr::filter(Indiv==WTbulk) %>% dplyr::mutate("SNPindex"= as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)))
+  vcf.df.Mbulk <- vcf.df %>% dplyr::filter(Indiv==Mbulk) %>% dplyr::mutate("SNPindex"= as.numeric(AD_alt)/(as.numeric(AD_ref) + as.numeric(AD_alt)))
 
   vcf.df.jointBulks <- dplyr::inner_join(vcf.df.WTbulk, 
                                          vcf.df.Mbulk, 

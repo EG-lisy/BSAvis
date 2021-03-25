@@ -23,6 +23,8 @@ filter_variants(
 \item{max_DP}{max value allowed for the read depth (default=200)}
 
 \item{min_GQ}{min value allowed for the genotype quality (default=99)}
+
+\item{vcf.df.bulk}{vcf dataframe}
 }
 \value{
 Filtered bulks (type: data frame)

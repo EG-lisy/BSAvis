@@ -2,7 +2,7 @@
 #'
 #' This function allows to filter variants.
 #'
-#' @param vcf.df.bulk
+#' @param vcf.df.bulk vcf dataframe
 #' @param min_SNPindex min value allowed for the SNP index (default=0.3)
 #' @param max_SNPindex max value allowed for the SNP index (default=0.9)
 #' @param min_DP min value allowed for the read depth (default=50)

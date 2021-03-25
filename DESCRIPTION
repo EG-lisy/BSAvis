@@ -4,14 +4,15 @@ Title: Bulk Segregant Analysis - Visualisation Package
 Version: 0.0.0.9000
 Date: 24-3-2021
 Authors@R: c(
-    person("Claudia", "Rey Carrascosa", email= "claudia.m.rey-carrascosa@cranfield.ac.uk", family="TEAM"),
-    person("Elisabetta", "Galatola", email="elisabetta.galatola@cranfield.ac.uk", family="TEAM"),
-    person("Rebecca", "Guy", email="rebecca.guy@cranfield.ac.uk", family="TEAM"),
-    person("Sweta", "Jajoriya", email="s.jajoriya@cranfield.ac.uk", family="TEAM"),
-    person("Weiyi", "Huang", email="weiyi.huang@cranfield.ac.uk", family="TEAM")
+    person("Claudia", "Rey Carrascosa", email= "claudia.m.rey-carrascosa@cranfield.ac.uk", role = "aut"),
+    person("Elisabetta", "Galatola", email="elisabetta.galatola@cranfield.ac.uk", role = c("aut","cre")),
+    person("Rebecca", "Guy", email="rebecca.guy@cranfield.ac.uk", role = "aut"),
+    person("Sweta", "Jajoriya", email="s.jajoriya@cranfield.ac.uk", role = "aut"),
+    person("Weiyi", "Huang", email="weiyi.huang@cranfield.ac.uk", role = "aut")
     )
+Maintainer: Elisabetta Galatola <elisabetta.galatola@cranfield.ac.uk>
 Description: BSAvis allows to detect causal regions using Bulk Segregant Analysis of Next Generation Sequencing data.
-License: ?
+License: MIT
 Encoding: UTF-8
 LazyData: true
 SRoxygen: list(markdown = TRUE)

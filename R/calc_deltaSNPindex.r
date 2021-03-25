@@ -1,8 +1,8 @@
 #Calculate delta(SNP Index)
 
 #' @title Calculate delta(SNP index)
-#' @description This function is used to calculate the delta(SNP index) using the calculated mean of the M and WT indices, as follows:
-#' \deqn{mean_SNPindex.M - mean_SNPindex.WT)}. 
+#' @description This function is used to calculate the delta(SNP index) using the calculated mean of the Mutant (M) and wild-type (WT) indices, as follows:
+#' \deqn{mean_M_SNPindex - mean_WT_SNPindex.WT}. 
 #'
 #' @param vcf.df.window data frame obtained after running the slidingWindow() function
 #'

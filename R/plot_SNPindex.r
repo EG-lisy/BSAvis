@@ -13,8 +13,8 @@ plot_SNPindex <- function(vcf.df.bulks.filt, Chrom) {
   
   #Plot SNP indexes of both pools
   ggplot2::ggplot() +
-    ggplot2::geom_line(data=vcf.df.bulks, aes(mid, mean_SNPindex.WT, color="WT pool"), size=0.75) +  
-    ggplot2::geom_line(data=vcf.df.bulks, aes(mid, mean_SNPindex.M, color="Mutant pool"), size=0.75) +
+    ggplot2::geom_line(data=vcf.df.bulks.filt, aes(mid, mean_SNPindex.WT, color="WT pool"), size=0.75) +  
+    ggplot2::geom_line(data=vcf.df.bulks.filt, aes(mid, mean_SNPindex.M, color="Mutant pool"), size=0.75) +
     ggplot2::geom_hline(yintercept = 0.5, lty=2) + 
     ggplot2::coord_cartesian(expand=FALSE) +
     ggplot2::scale_x_continuous(labels=function(x)x/1000000) +
@@ -24,4 +24,3 @@ plot_SNPindex <- function(vcf.df.bulks.filt, Chrom) {
     ggplot2::labs(title = paste("Chromosome", Chrom)) + 
     ggplot2::theme(legend.title = element_blank()) 
 }
-

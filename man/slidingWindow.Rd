@@ -24,5 +24,9 @@ windows
 This function allows to calculate the sliding window and the mean values of both bulks.
 }
 \examples{
-slidingwindow()
+vcf_df_window <- slidingWindow(Chrom=3,
+chromLength=chrom_length,
+windowSize=1000000,
+windowStep=10000,
+df=vcf_df_filter)
 }

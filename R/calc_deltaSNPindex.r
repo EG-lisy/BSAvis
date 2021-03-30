@@ -10,7 +10,7 @@
 #'
 #' @export
 #' @examples
-#' calc_deltaSNPindex()
+#' vcf_df_window_delta <- calc_deltaSNPindex(vcf.df.window=vcf_df_window)
 
 
 calc_deltaSNPindex <- function(vcf.df.window) {

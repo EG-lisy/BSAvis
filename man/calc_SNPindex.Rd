@@ -22,5 +22,7 @@ This function is used to sparate (filter) the two bulks, and calculate their (SN
 Bulks are finally joined together in a single data frame.
 }
 \examples{
-calc_SNPindex()
+vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
+WTbulk="pool_S3781_minus", 
+Mbulk="pool_S3781_plus")
 }

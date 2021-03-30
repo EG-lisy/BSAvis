@@ -15,5 +15,6 @@ extract_chromLength(chromID, meta)
 This function allows to extract the chromosome length of a specific chromosome, using the meta information contained in the vcf file.
 }
 \examples{
-extract_chromLength()
+chrom_length <- extract_chromLength(chromID="SL4.0ch03",
+meta=vcf_meta)
 }

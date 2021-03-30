@@ -13,7 +13,9 @@
 #'
 #' @export
 #' @examples
-#' calc_SNPindex()
+#' vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
+#' WTbulk="pool_S3781_minus", 
+#' Mbulk="pool_S3781_plus")
 
 calc_SNPindex <- function(vcf.df, WTbulk, Mbulk) {
 

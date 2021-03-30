@@ -10,7 +10,7 @@
 #'
 #' @export
 #' @examples
-#' readBSA_vcf()
+#' vcf_list <- readBSA_vcf(file="dataset1.vcf")
 
 readBSA_vcf <- function(file) {
   

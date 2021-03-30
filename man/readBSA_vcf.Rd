@@ -18,5 +18,5 @@ Format fields get separated as follows: AD, DP, GQ, GT. Allelic depths (AD) get 
 Finally, a list with the meta information gets stored, for plotting matters (i.e., extracting the chromosome lengths).
 }
 \examples{
-readBSA_vcf()
+vcf_list <- readBSA_vcf(file="dataset1.vcf")
 }

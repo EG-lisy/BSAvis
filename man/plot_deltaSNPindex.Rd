@@ -4,16 +4,26 @@
 \alias{plot_deltaSNPindex}
 \title{Plot delta(SNP index)}
 \usage{
-plot_deltaSNPindex(vcf.df.bulks.filt, Chrom)
+plot_deltaSNPindex(poolsVCF_df, Chrom, DPI)
 }
 \arguments{
-\item{vcf.df.bulks.filt}{filtered data frame (containing both bulks)}
-
 \item{Chrom}{chromosome ID}
+
+\item{DPI}{resolution value. If no value is given, plots will be generated but not saved.}
+
+\item{vcf.df.bulks.filt}{filtered data frame (containing both bulks)}
 }
 \description{
-This function allows plotting delta(SNP Index).
+This function allows plotting delta(SNP Index).\n 
+Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).\n\n
+Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 }
 \examples{
-plot_deltaSNPindex()
+Plot SNP-index\n
+plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
+Chrom=3)\n
+Save plot (specified resolution - tiff format)\n
+plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
+Chrom=3,
+DPI=1200)
 }

@@ -1,10 +1,10 @@
 #Plot SIMPLE-ratio
 
 #' @title Plot SIMPLE-ratio
-#' @description This function allows plotting the SIMPLE-ratio (Wachsman et al., 2017).\n
-#' The SIMPLE-ratio gets filtered by the minimum SIMPLE-ratio value (set by the user), before performing LOESS smoothing.\n
-#' The plot gets generated based on the chromosome location of each SNP against the LOESS-fitted SIMPLE-ratio.\n
-#' Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).\n\n
+#' @description This function allows plotting the SIMPLE-ratio (Wachsman et al., 2017).
+#' The SIMPLE-ratio gets filtered by the minimum SIMPLE-ratio value (set by the user), before performing LOESS smoothing.
+#' The plot gets generated based on the chromosome location of each SNP against the LOESS-fitted SIMPLE-ratio.
+#' Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
 #' Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 #' 
 #' @param vcf.df.SIMPLEratio SIMPLE-ratio data frame (containing both bulks)
@@ -14,11 +14,11 @@
 #' @export
 #' 
 #' @examples
-#' Plot SIMPLE-ratio for a specific chromosome\n
+#' Plot SIMPLE-ratio for a specific chromosome
 #' plot_SIMPLEratio(vcf.df.SIMPLEratio=vcf_df_SIMPLEratio, 
 #' min_SIMPLEratio=0.1, 
-#' Chrom=7)\n
-#' Save plot (specified resolution - tiff format)\n
+#' Chrom=7)
+#' Save plot (specified resolution - tiff format)
 #' plot_SIMPLEratio(vcf.df.SIMPLEratio=vcf_df_SIMPLEratio, 
 #' min_SIMPLEratio=0.1, 
 #' Chrom=7,

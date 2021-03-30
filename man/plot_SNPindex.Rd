@@ -14,14 +14,14 @@ plot_SNPindex(poolsVCF_df, Chrom, DPI)
 \item{vcf.df.bulks.filt}{filtered data frame (containing both bulks)}
 }
 \description{
-This function allows plotting the (SNP Index).\n
-Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).\n\n
+This function allows plotting the (SNP Index).
+Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
 Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 }
 \examples{
-Plot SNP-index of both bulks (wild-type and mutant)\n
+Plot SNP-index of both bulks (wild-type and mutant)
 plot_SNPindex(vcf.df.bulks=vcf_df_window,
-Chrom=3)\n
+Chrom=3)
 Save plot (specified resolution - tiff format)
 plot_SNPindex(vcf.df.bulks=vcf_df_window,
 Chrom=3,

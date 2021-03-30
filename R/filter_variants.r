@@ -13,9 +13,9 @@
 #'
 #' @export
 #' @example 
-#' Default parameters\n
-#' vcf_df_filter <- filter_variants(vcf.df.bulks=vcf_df_SNPindex)\n
-#' Custom parameters\n
+#' Default parameters
+#' vcf_df_filter <- filter_variants(vcf.df.bulks=vcf_df_SNPindex)
+#' Custom parameters
 #' vcf_df_filter <- filter_variants(vcf.df.bulks=vcf_df_SNPindex, 
 #' min_SNPindex=0.3, 
 #' max_SNPindex=0.9, 

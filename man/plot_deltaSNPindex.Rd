@@ -19,10 +19,10 @@ Whenever the DPI parameter gets specified, the plot will be saved in .TIF format
 Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 }
 \examples{
-Plot SNP-index\n
+Plot SNP-index
 plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-Chrom=3)\n
-Save plot (specified resolution - tiff format)\n
+Chrom=3)
+Save plot (specified resolution - tiff format)
 plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
 Chrom=3,
 DPI=1200)

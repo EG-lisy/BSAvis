@@ -14,8 +14,8 @@ plot_deltaSNPindex(poolsVCF_df, Chrom, DPI)
 \item{vcf.df.bulks.filt}{filtered data frame (containing both bulks)}
 }
 \description{
-This function allows plotting delta(SNP Index).\n 
-Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).\n\n
+This function allows plotting delta(SNP Index).
+Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
 Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 }
 \examples{

@@ -20,8 +20,7 @@ data frame (SIMPLE-ratio)
 First of all, this function creates a data frame for each bulk, which includes a column containing the SNP-index values. 
 Then, rows containing InDel variants (i.e. insertions/deletions) get removed, and the data frames get joined together by chromosome (ChromKey) and position (POS).\n
 Finally, the SIMPLE-ratio between the two bulks (M/WT) gets calculated as follows:
-\deqn{(AD_ref.WT/(AD_ref.WT + AD_alt.WT)) - (AD_ref.M/(AD_ref.M + AD_alt.M))}
-\n
+\deqn{(AD_ref.WT/(AD_ref.WT + AD_alt.WT)) - (AD_ref.M/(AD_ref.M + AD_alt.M))}\n
 Reference: Wachsman et al., 2017
 }
 \examples{

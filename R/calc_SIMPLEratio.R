@@ -5,7 +5,7 @@
 #' Then, rows containing InDel variants (i.e. insertions/deletions) get removed, and the data frames get joined together by chromosome (ChromKey) and position (POS).\n
 #' Finally, the SIMPLE-ratio between the two bulks (M/WT) gets calculated as follows:
 #' \deqn{(AD_ref.WT/(AD_ref.WT + AD_alt.WT)) - (AD_ref.M/(AD_ref.M + AD_alt.M))}
-#'\n
+#' \n
 #' Reference: Wachsman et al., 2017
 #'
 #' @param vcf.df vcf data frame

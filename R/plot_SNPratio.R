@@ -1,10 +1,11 @@
 #Plot SNP-ratio
 
 #' @title Plot SNP-ratio
-#' @description This function allows plotting the SNP-ratio (Wachsman et al., 2017).
+#' @description This function allows plotting the SNP-ratio (\emph{Wachsman et al., 2017}).
 #' The SNP-ratio gets filtered by the minimum SNP-ratio value (set by the user), before performing LOESS smoothing.
 #' The plot gets generated based on the chromosome location of each SNP against the LOESS-fitted SNP-ratio.
 #' Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
+#' 
 #' \strong{Note:} \emph{for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. 
 #' Always refer to journal-specific guidelines.}
 #' 

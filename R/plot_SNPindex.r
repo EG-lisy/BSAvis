@@ -3,14 +3,16 @@
 #' @title Plot (SNP index)
 #' @description This function allows plotting the (SNP Index).
 #' Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
-#' Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
+#' 
+#' \strong{Note:} \emph{for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. 
+#' Always refer to journal-specific guidelines.}
 #' 
 #' @param vcf.df.window.SNPindex filtered data frame (containing both bulks)
 #' @param Chrom chromosome ID
-#' @param DPI resolution value. If no value is given, plots will be generated but not saved.
-#' @param Width width value. Default=7.5
-#' @param Height height value. Default=5
-#' @param Units size units. Default="in" (inches)
+#' @param DPI resolution value. If no value is given, plots will be generated but not saved
+#' @param Width width value (default=7.5)
+#' @param Height height value (default=5)
+#' @param Units size units (default="in")
 #' 
 #' @export
 #' @examples

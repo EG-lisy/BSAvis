@@ -24,8 +24,7 @@ This function is used to sparate (filter) the two bulks, and calculate their (SN
 Bulks get joined together in a single data frame.
 
 Note that the user can select specific variants to consider, 
-by setting the "Variants" parameter to "SNP" (default) or "all" 
-(respectively referring to SNPs or InDels+SNPs).
+by setting the "Variants" parameter to "SNP" (default) or "all" (InDels+SNPs).
 }
 \examples{
 \strong{Calculate SNP-index of both bulks (by default, only SNPs are considered)}

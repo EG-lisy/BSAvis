@@ -2,8 +2,9 @@
 #' @title Plot delta(SNP index)
 #' @description This function allows plotting delta(SNP Index).
 #' Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
-#' Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 #' 
+#' #' \strong{Note:} \emph{for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. 
+#' Always refer to journal-specific guidelines.}
 #'
 #' @param vcf.df.window.delta filtered data frame (containing both bulks)
 #' @param Chrom chromosome ID
@@ -22,11 +23,11 @@
 #'                    Chrom=3,
 #'                    DPI=1200)
 #' \strong{Save plot with specified width and height. The default unit is set to inches (Units="in")}
-# plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-#                    Chrom=3,
-#                    DPI=1200,
-#                    Height=9,
-#                    Width=6)
+#' plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
+#'                    Chrom=3,
+#'                    DPI=1200,
+#'                    Height=9,
+# '                   Width=6)
 
 
 plot_deltaSNPindex <- function(vcf.df.window.delta, Chrom, DPI, Width=7.5, Height=5, Units="in"){

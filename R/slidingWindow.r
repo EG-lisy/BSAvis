@@ -11,7 +11,7 @@
 #' @return windows
 #'
 #' @export
-#' @examples
+#' @example
 #' vcf_df_window <- slidingWindow(Chrom=3,
 #'                                chromLength=chrom_length,
 #'                                windowSize=1000000,

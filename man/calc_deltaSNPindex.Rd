@@ -16,6 +16,3 @@ data frame containing the delta(SNP index) values
 This function is used to calculate the delta(SNP index) using the calculated mean of the mutant (M) and wild-type (WT) indices, as follows:
 \deqn{mean_M_SNPindex - mean_WT_SNPindex.WT}
 }
-\examples{
-vcf_df_window_delta <- calc_deltaSNPindex(vcf.df.window=vcf_df_window)
-}

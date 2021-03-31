@@ -8,9 +8,9 @@
 #' @param meta meta information 
 #'
 #' @export
-#' @examples
+#' @example
 #' chrom_length <- extract_chromLength(chromID="SL4.0ch03",
-#' meta=vcf_meta)
+#'                                     meta=vcf_meta)
 
 extract_chromLength <- function(chromID, meta){
   

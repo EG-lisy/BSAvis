@@ -23,6 +23,11 @@ This function allows to calculate the SNP-ratio between two bulks (M/WT), as fol
 \deqn{(AD_ref.WT/(AD_ref.WT + AD_alt.WT)) - (AD_ref.M/(AD_ref.M + AD_alt.M))}
 Note that the user can select specific variants to consider, by setting the "Variants" parameter to "SNP" (default) or "all" (respectively referring to SNPs or InDels+SNPs).
 }
+\examples{
+vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_df, 
+                                 WTbulk="pool_S3781_minus", 
+                                 Mbulk="pool_S3781_plus")
+}
 \references{
 Wachsman et al., 2017
 }

@@ -11,7 +11,8 @@
 #' @return a list containing meta information
 #'
 #' @export
-#' @example
+#' 
+#' @examples
 #' vcf_list <- readBSA_vcf(file="dataset1.vcf")
 
 readBSA_vcf <- function(file) {

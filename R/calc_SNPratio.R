@@ -15,7 +15,7 @@
 #' @return data frame (SNP-ratio)
 #'
 #' @export
-#' @example
+#' @examples
 #' vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_df, 
 #'                                  WTbulk="pool_S3781_minus", 
 #'                                  Mbulk="pool_S3781_plus")

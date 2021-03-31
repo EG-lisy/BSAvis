@@ -9,7 +9,7 @@
 #' @return data frame containing the delta(SNP index) values
 #'
 #' @export
-#' @example
+#' @examples
 #' vcf_df_window_delta <- calc_deltaSNPindex(vcf.df.window=vcf_df_window)
 
 

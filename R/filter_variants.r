@@ -12,16 +12,16 @@
 #' @return Filtered bulks (type: data frame)
 #'
 #' @export
-#' @example 
-#' Default parameters
+#' @examples
+#' \strong{Default parameters}
 #' vcf_df_filter <- filter_variants(vcf.df.bulks=vcf_df_SNPindex)
-#' Custom parameters
+#' \strong{Custom parameters}
 #' vcf_df_filter <- filter_variants(vcf.df.bulks=vcf_df_SNPindex, 
-#' min_SNPindex=0.3, 
-#' max_SNPindex=0.9, 
-#' min_DP=50, 
-#' max_DP=200, 
-#' min_GQ=99)
+#'                                 min_SNPindex=0.3, 
+#'                                 max_SNPindex=0.9, 
+#'                                 min_DP=50, 
+#'                                 max_DP=200, 
+#'                                 min_GQ=99)
 
 
 filter_variants <- function(vcf.df.bulks, min_SNPindex=0.3, max_SNPindex=0.9, min_DP=50, max_DP=200, min_GQ=99){

@@ -4,14 +4,27 @@
 \alias{plot_deltaSNPindex}
 \title{Plot delta(SNP index)}
 \usage{
-plot_deltaSNPindex(poolsVCF_df, Chrom, DPI)
+plot_deltaSNPindex(
+  vcf.df.window.delta,
+  Chrom,
+  DPI,
+  Width = 7.5,
+  Height = 5,
+  Units = "in"
+)
 }
 \arguments{
+\item{vcf.df.window.delta}{filtered data frame (containing both bulks)}
+
 \item{Chrom}{chromosome ID}
 
 \item{DPI}{resolution value. If no value is given, plots will be generated but not saved.}
 
-\item{vcf.df.bulks.filt}{filtered data frame (containing both bulks)}
+\item{Width}{width value. Default=7.5}
+
+\item{Height}{height value. Default=5}
+
+\item{Units}{size units. Default="in" (inches)}
 }
 \description{
 This function allows plotting delta(SNP Index).
@@ -19,11 +32,12 @@ Whenever the DPI parameter gets specified, the plot will be saved in .TIF format
 Note: for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. Always refer to journal-specific guidelines.
 }
 \examples{
-Plot SNP-index
+\strong{Plot SNP-index}
 plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-Chrom=3)
-Save plot (specified resolution - tiff format)
+                   Chrom=3)
+\strong{Save plot (specified resolution - tiff format)}
 plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-Chrom=3,
-DPI=1200)
+                   Chrom=3,
+                   DPI=1200)
+\strong{Save plot with specified width and height. The default unit is set to inches (Units="in")}
 }

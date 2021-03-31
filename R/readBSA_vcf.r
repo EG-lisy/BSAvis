@@ -1,4 +1,5 @@
 #Read vcf file
+
 #' @title Read vcf file
 #' @description This function allows to read a vcf file, which gets converted to a dataframe. 
 #' Format fields get separated as follows: AD, DP, GQ, GT. Allelic depths (AD) get split into reference and alterate AD values (AD_ref and AD_alt).

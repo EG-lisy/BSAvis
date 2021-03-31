@@ -13,10 +13,10 @@
 #' @export
 #' @examples
 #' vcf_df_window <- slidingWindow(Chrom=3,
-#' chromLength=chrom_length,
-#' windowSize=1000000,
-#' windowStep=10000,
-#' df=vcf_df_filter)
+#'                                chromLength=chrom_length,
+#'                                windowSize=1000000,
+#'                                windowStep=10000,
+#'                                df=vcf_df_filter)
 
 
 slidingWindow <- function(Chrom, chromLength, windowSize, windowStep, df){

@@ -15,5 +15,10 @@ Description: BSAvis allows to detect causal regions using Bulk Segregant Analysi
 License: MIT
 Encoding: UTF-8
 LazyData: true
+Imports:
+    vcfR,
+    ggplot2,
+    dplyr,
+    tidyr
 SRoxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

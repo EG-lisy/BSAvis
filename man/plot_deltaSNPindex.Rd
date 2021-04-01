@@ -30,7 +30,7 @@ plot_deltaSNPindex(
 This function allows plotting delta(SNP Index).
 Whenever the DPI parameter gets specified, the plot will be saved in .TIF format with the specified resolution (dpi value).
 
-#' \strong{Note:} \emph{for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. 
+\strong{Note:} \emph{for journal publications the preferred format is .TIF, and the minimum resolution is of 600 dpi or 1200 dpi. 
 Always refer to journal-specific guidelines.}
 }
 \examples{

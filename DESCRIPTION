@@ -16,9 +16,9 @@ License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports:
-    vcfR,
-    ggplot2,
-    dplyr,
-    tidyr
+    vcfR (>= 1.12.0),
+    ggplot2 (>= 3.3.2),
+    dplyr (>= 1.0.2),
+    tidyr (>= 1.1.2)
 SRoxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

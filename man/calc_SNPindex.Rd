@@ -2,18 +2,18 @@
 % Please edit documentation in R/calc_SNPIndex.R
 \name{calc_SNPindex}
 \alias{calc_SNPindex}
-\title{Calculate (SNP index)}
+\title{Calculate SNP-index}
 \usage{
-calc_SNPindex(vcf.df, WTbulk, Mbulk, Variants = "SNP")
+calc_SNPindex(vcf.df, wtBulk, mBulk, variants = "SNP")
 }
 \arguments{
 \item{vcf.df}{Data frame of the vcf file}
 
-\item{WTbulk}{Wild-Type pool}
+\item{wtBulk}{Wild-Type pool}
 
-\item{Mbulk}{Mutant pool}
+\item{mBulk}{Mutant pool}
 
-\item{Variants}{variants to be considered. Default is "SNP" (allowed: "SNP" or "all")}
+\item{variants}{variants to be considered. Default is "SNP" (allowed: "SNP" or "all")}
 }
 \value{
 A dataframe with the joint bulks
@@ -24,13 +24,17 @@ This function is used to sparate (filter) the two bulks, and calculate their (SN
 Bulks get joined together in a single data frame.
 
 Note that the user can select specific variants to consider, 
-by setting the "Variants" parameter to "SNP" (default) or "all" (InDels+SNPs).
+by setting the "variants" parameter to "SNP" (default) or "all" (InDels+SNPs).
 }
 \examples{
-\strong{Calculate SNP-index of both bulks (by default, only SNPs are considered)}
+## Calculate SNP-index of both bulks (by default, only SNPs are considered)
 vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
-                               WTbulk="pool_S3781_minus", 
-                               Mbulk="pool_S3781_plus")
-\strong{Calculate SNP-index considering InDels and SNPs}
+                               wtBulk="pool_S3781_minus", 
+                               mBulk="pool_S3781_plus")
+
+## Calculate SNP-index considering InDels and SNPs
 vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
+                                 wtBulk="pool_S3781_minus", 
+                                mBulk="pool_S3781_plus",
+                                 variants="all")
 }

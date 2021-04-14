@@ -14,7 +14,7 @@
 #' @examples
 #' ## Default parameters
 #' vcf_df_filter <- filter_variants(vcf.df.SNPratios=vcf_df_SNPratio)
-#' ## Custom parameters}
+#' ## Custom parameters
 #' vcf_df_filter <- filter_variants(vcf.df.SNPratios=vcf_df_SNPratio, 
 #'                                  min.SNPratio=0.3, 
 #'                                  max.SNPratio=0.9, 

@@ -16,7 +16,7 @@
 #' @examples
 #' ## Default parameters
 #' vcf_df_filter <- filter_variants(vcf.df.SNPindexs=vcf_df_SNPindex)
-#' ## Custom parameters}
+#' ## Custom parameters
 #' vcf_df_filter <- filter_variants(vcf.df.SNPindexs=vcf_df_SNPindex, 
 #'                                  min.SNPindex=0.3, 
 #'                                  max.SNPindex=0.9, 

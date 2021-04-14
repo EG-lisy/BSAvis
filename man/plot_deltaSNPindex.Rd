@@ -5,26 +5,32 @@
 \title{Plot delta(SNP index)}
 \usage{
 plot_deltaSNPindex(
-  vcf.df.window.delta,
-  Chrom,
-  DPI,
-  Width = 7.5,
-  Height = 5,
-  Units = "in"
+  deltaSNPindex.windows,
+  chr,
+  filename = paste0("plot_deltaSNPindex_ch", chr),
+  path = getwd(),
+  dpi,
+  width = 7.5,
+  height = 5,
+  units = "in"
 )
 }
 \arguments{
-\item{vcf.df.window.delta}{filtered data frame (containing both bulks)}
+\item{deltaSNPindex.windows}{filtered data frame (containing both bulks)}
 
-\item{Chrom}{chromosome ID}
+\item{chr}{chrosome ID}
 
-\item{DPI}{resolution value. If no value is given, plots will be generated but not saved.}
+\item{filename}{file name under which the file will be saved (default="plot_deltaSNPindex_chX")}
 
-\item{Width}{width value. Default=7.5}
+\item{path}{path where the file will be saved (default=current working directory)}
 
-\item{Height}{height value. Default=5}
+\item{dpi}{resolution value. If no value is given, plots will be generated but not saved}
 
-\item{Units}{size units. Default="in" (inches)}
+\item{width}{width value (default=7.5)}
+
+\item{height}{height value (default=5)}
+
+\item{units}{size units (default="in")}
 }
 \description{
 This function allows plotting delta(SNP Index).

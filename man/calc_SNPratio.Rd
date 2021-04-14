@@ -4,16 +4,16 @@
 \alias{calc_SNPratio}
 \title{Calculate SNP-ratio}
 \usage{
-calc_SNPratio(vcf.df, WTbulk, Mbulk, Variants = "SNP")
+calc_SNPratio(vcf.df, wtBulk, mBulk, variants = "SNP")
 }
 \arguments{
-\item{vcf.df}{vcf data frame}
+\item{vcf.df}{Data frame of the vcf file}
 
-\item{WTbulk}{wild-type bulk}
+\item{wtBulk}{Wild-Type pool}
 
-\item{Mbulk}{mutant bulk}
+\item{mBulk}{Mutant pool}
 
-\item{Variants}{variants to be considered. Default is "SNP" (allowed: "SNP" or "all")}
+\item{variants}{variants to be considered. Default is "SNP" (allowed: "SNP" or "all")}
 }
 \value{
 data frame (SNP-ratio)
@@ -25,8 +25,8 @@ Note that the user can select specific variants to consider, by setting the "Var
 }
 \examples{
 vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_df, 
-                                 WTbulk="pool_S3781_minus", 
-                                 Mbulk="pool_S3781_plus")
+                                 wtBulk="pool_S3781_minus", 
+                                 mBulk="pool_S3781_plus")
 }
 \references{
 Wachsman et al., 2017

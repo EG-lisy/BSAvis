@@ -5,35 +5,47 @@
 \title{Plot SNP-ratio}
 \usage{
 plot_SNPratio(
-  vcf.df.SNPratio,
-  min_SNPratio = 0.1,
-  Degree = 2,
-  Span = 0.3,
-  Chrom,
-  DPI,
-  Width = 7.5,
-  Height = 5,
-  Units = "in"
+  vcf.df.SNPratio.filt,
+  chrList,
+  chrID,
+  chr,
+  min.SNPratio,
+  degree = 2,
+  span = 0.07,
+  filename = paste0("plot_SNPratio_ch", chr),
+  path = getwd(),
+  dpi,
+  width = 7.5,
+  height = 5,
+  units = "in"
 )
 }
 \arguments{
-\item{vcf.df.SNPratio}{SNP-ratio data frame (containing both bulks)}
+\item{vcf.df.SNPratio.filt}{filtered data frame (containing both bulks)}
 
-\item{min_SNPratio}{minimum SNP-ratio value to consider (default=0.1)}
+\item{chrList}{list of chromosome IDs}
 
-\item{Degree}{LOESS smoothing degree (default=2)}
+\item{chrID}{chromosome ID of interest}
 
-\item{Span}{LOESS smoothing span (default=0.3)}
+\item{chr}{chromosome number to print on plot}
 
-\item{Chrom}{chromosome ID}
+\item{min.SNPratio}{min SNP ratio threshold}
 
-\item{DPI}{resolution value. If no value is given, plots will be generated but not saved}
+\item{degree}{LOESS smoothing degree (default=2)}
 
-\item{Width}{width value (default=7.5)}
+\item{span}{LOESS smoothing span (default=0.07)}
 
-\item{Height}{height value (default=5)}
+\item{filename}{file name under which the file will be saved (default="plot_SNPratio_chX")}
 
-\item{Units}{size units (default="in")}
+\item{path}{path where the file will be saved (default=current working directory)}
+
+\item{dpi}{resolution value. If no value is given, plots will be generated but not saved}
+
+\item{width}{width value (default=7.5)}
+
+\item{height}{height value (default=5)}
+
+\item{units}{size units (default="in")}
 }
 \description{
 This function allows plotting the SNP-ratio (\emph{Wachsman et al., 2017}).
@@ -45,16 +57,16 @@ Whenever the DPI parameter gets specified, the plot will be saved in .TIF format
 Always refer to journal-specific guidelines.}
 }
 \examples{
-\strong{Plot SNP-ratio for a specific chromosome}
+## Plot SNP-ratio for a specific chromosome
 plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
               min_SNPratio=0.1, 
               Chrom=7)
-\strong{Save plot (specified resolution - tiff format)}
+## Save plot (specified resolution - tiff format)
 plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
               min_SNPratio=0.1, 
               Chrom=7,
               DPI=1200)
-\strong{Save plot with specified width and height. The default unit is set to inches (Units="in")}
+## Save plot with specified width and height. The default unit is set to inches (Units="in")
 plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
               min_SNPratio=0.1, 
               Chrom=7,

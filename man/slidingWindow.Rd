@@ -4,29 +4,42 @@
 \alias{slidingWindow}
 \title{Sliding Windows}
 \usage{
-slidingWindow(Chrom, chromLength, windowSize, windowStep, df)
+slidingWindow(
+  meta,
+  chrList,
+  chrID,
+  windowSize = 1e+06,
+  windowStep = 10000,
+  vcf.df.SNPindex.filt
+)
 }
 \arguments{
-\item{Chrom}{chromosome ID}
+\item{meta}{meta information stored inside the vcf file}
 
-\item{chromLength}{chromosome length}
+\item{chrList}{list of chromosome IDs}
 
-\item{windowSize}{window size}
+\item{chrID}{chromosome ID of interest}
 
-\item{windowStep}{window step}
+\item{windowSize}{window size (default=1000000)}
 
-\item{df}{data frame}
+\item{windowStep}{window step (default=10000)}
+
+\item{vcf.df.SNPindex.filt}{filtered SNP-index data frame}
 }
 \value{
-windows
+SNP-index windows
 }
 \description{
-This function allows to calculate the sliding window and the mean values of both bulks.
+This function allows to calculate the sliding window based on the chromosome length of the desired chromosome to analyse. 
+A data frame containing the mean SNP-index values of both bulks gets generated.
 }
 \examples{
+## Default function
 vcf_df_window <- slidingWindow(Chrom=3,
                                chromLength=chrom_length,
                                windowSize=1000000,
                                windowStep=10000,
                                df=vcf_df_filter)
+## Custom function
+
 }

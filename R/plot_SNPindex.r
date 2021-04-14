@@ -25,7 +25,7 @@
 #' plot_SNPindex(vcf.df.bulks=vcf_df_window,
 #'               chr=3,
 #'               dpi=1200)
-#' ## Save plot with specified width and height. The default unit is set to inches (units="in")}
+#' ## Save plot with specified width and height. The default unit is set to inches (units="in")
 #' plot_SNPindex(vcf.df.bulks=vcf_df_window,
 #'               chr=3,
 #'               dpi=1200,

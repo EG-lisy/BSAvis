@@ -13,11 +13,12 @@ readBSA_vcf(file)
 a list containing meta information
 }
 \description{
-This function allows to read a vcf file, converting it inot a data frame. 
+This function allows to read a vcf file, converting it into a data frame. 
 Format fields get separated as follows: AD, DP, GQ, GT. 
 
 Allelic depths (AD) get split into reference and alterate AD values ("AD_ref" and "AD_alt").
 }
 \examples{
+## Read vcf file
 vcf_list <- readBSA_vcf(file="dataset1.vcf")
 }

@@ -4,18 +4,18 @@
 \alias{calc_deltaSNPindex}
 \title{Calculate delta(SNP index)}
 \usage{
-calc_deltaSNPindex(vcf.df.window)
+calc_deltaSNPindex(SNPindex.windows)
 }
 \arguments{
-\item{vcf.df.window}{data frame obtained after running the slidingWindow() function}
+\item{SNPindex.windows}{data frame obtained after running the slidingWindow()function}
 }
 \value{
-data frame containing the delta(SNP index) values
+data frame containing the delta(SNP-index) means values
 }
 \description{
 This function is used to calculate the delta(SNP index) using the calculated mean of the mutant (M) and wild-type (WT) indices, as follows:
 \deqn{mean_M_SNPindex - mean_WT_SNPindex.WT}
 }
 \examples{
-vcf_df_window_delta <- calc_deltaSNPindex(vcf.df.window=vcf_df_window)
+vcf_df_window_delta <- calc_deltaSNPindex(SNPindex.windows=vcf_df_window)
 }

@@ -7,36 +7,37 @@
 #'
 #' @references Wachsman et al., 2017
 #'
-#' @param vcf.df vcf data frame
-#' @param WTbulk wild-type bulk
-#' @param Mbulk mutant bulk
-#' @param Variants variants to be considered. Default is "SNP" (allowed: "SNP" or "all")
-#' 
+#' @param vcf.df Data frame of the vcf file
+#' @param wtBulk Wild-Type pool
+#' @param mBulk Mutant pool 
+#' @param variants variants to be considered. Default is "SNP" (allowed: "SNP" or "all")
+#'
 #' @return data frame (SNP-ratio)
 #'
-#' @export
+#' @importFrom dplyr %>%
+#' @export calc_SNPratio
 #' @examples
 #' vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_df, 
-#'                                  WTbulk="pool_S3781_minus", 
-#'                                  Mbulk="pool_S3781_plus")
+#'                                  wtBulk="pool_S3781_minus", 
+#'                                  mBulk="pool_S3781_plus")
 
-calc_SNPratio <- function(vcf.df, WTbulk, Mbulk, Variants="SNP") {
+calc_SNPratio <- function(vcf.df, wtBulk, mBulk, variants="SNP") {
   
-  #Create dataframe for each bulk AND include a new column with SNP-index
-  vcf.df.WTbulk <- vcf.df %>% dplyr::filter(Indiv==WTbulk) 
-  vcf.df.Mbulk <- vcf.df %>% dplyr::filter(Indiv==Mbulk) 
+  #Create data frame for each bulk 
+  vcf.df.WTbulk <- vcf.df %>% dplyr::filter(Indiv==wtBulk) 
+  vcf.df.Mbulk <- vcf.df %>% dplyr::filter(Indiv==mBulk) 
   
-  #Stop the program and show message if user selects a not allowed 'Variants' value
-  if (Variants!="SNP" & Variants!="all") {
-    stop("The allowed values for the 'Variants' argument are: 'SNP' or 'all'. The latter will consider both InDels and SNPs.")
+  #Stop the program and show message if user selects a not allowed 'variants' value
+  if (variants!="SNP" & variants!="all") {
+    stop("The allowed values for the 'variants' argument are: 'SNP' or 'all'. The latter will consider both InDels and SNPs.")
   }
   
-  #Remove from the data frames rows corresponding to InDel variants (if Variants=="SNP")
-  if (Variants=="SNP") {
+  #Remove from the data frames rows corresponding to InDel variants (if variants=="SNP")
+  if (variants=="SNP") {
     vcf.df.WTbulk <- vcf.df.WTbulk %>% dplyr::filter(nchar(GT_alleles)==3 &
-                                                       grepl("[^*]{3}", GT_alleles))
-    vcf.df.Mbulk <- vcf.df.Mbulk %>% dplyr::filter(nchar(GT_alleles)==3 &
                                                      grepl("[^*]{3}", GT_alleles))
+    vcf.df.Mbulk <- vcf.df.Mbulk %>% dplyr::filter(nchar(GT_alleles)==3 &
+                                                   grepl("[^*]{3}", GT_alleles))
   }
   
   #Join data frames of each bulk by same chromosome (ChromKey) and position (POS)

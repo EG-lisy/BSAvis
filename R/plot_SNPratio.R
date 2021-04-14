@@ -11,29 +11,34 @@
 #' 
 #' @references Wachsman et al., 2017
 #' 
-#' @param vcf.df.SNPratio SNP-ratio data frame (containing both bulks)
-#' @param min_SNPratio minimum SNP-ratio value to consider (default=0.1)
-#' @param Degree LOESS smoothing degree (default=2)
-#' @param Span LOESS smoothing span (default=0.3)
-#' @param Chrom chromosome ID
-#' @param DPI resolution value. If no value is given, plots will be generated but not saved
-#' @param Width width value (default=7.5)
-#' @param Height height value (default=5)
-#' @param Units size units (default="in")
-#' 
-#' @export
+#' @param vcf.df.SNPratio.filt filtered data frame (containing both bulks)
+#' @param chrList list of chromosome IDs
+#' @param chrID chromosome ID of interest
+#' @param chr chromosome number to print on plot
+#' @param min.SNPratio min SNP ratio threshold
+#' @param degree LOESS smoothing degree (default=2)
+#' @param span LOESS smoothing span (default=0.07)
+#' @param filename file name under which the file will be saved (default="plot_SNPratio_chX")
+#' @param path path where the file will be saved (default=current working directory)
+#' @param dpi resolution value. If no value is given, plots will be generated but not saved
+#' @param width width value (default=7.5)
+#' @param height height value (default=5)
+#' @param units size units (default="in")
+#'
+#' @importFrom dplyr %>%
+#' @export plot_SNPratio 
 #' 
 #' @examples
-#' \strong{Plot SNP-ratio for a specific chromosome}
+#' ## Plot SNP-ratio for a specific chromosome
 #' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
 #'               min_SNPratio=0.1, 
 #'               Chrom=7)
-#' \strong{Save plot (specified resolution - tiff format)}
+#' ## Save plot (specified resolution - tiff format)
 #' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
 #'               min_SNPratio=0.1, 
 #'               Chrom=7,
 #'               DPI=1200)
-#' \strong{Save plot with specified width and height. The default unit is set to inches (Units="in")}
+#' ## Save plot with specified width and height. The default unit is set to inches (Units="in")
 #' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
 #'               min_SNPratio=0.1, 
 #'               Chrom=7,
@@ -42,60 +47,71 @@
 #'               Width=6)
 
  
-plot_SNPratio <- function(vcf.df.SNPratio, min_SNPratio=0.1, Degree=2, Span=0.3, Chrom, DPI, Width=7.5, Height=5, Units="in") {
+plot_SNPratio <- function(vcf.df.SNPratio.filt, chrList, chrID, chr, min.SNPratio, degree=2, span=0.07, filename=paste0("plot_SNPratio_ch", chr), path=getwd(), dpi, width=7.5, height=5, units="in") {
   
   #If it is the case, print messages to let user know that default values are being used 
-  if (min_SNPratio==0.1) {
-    message("=> Filtering variants with DEFAULT minimum SNP ratio value (min_SIMPLEratio = 0.1)...")
-  }
-  
-  if (Degree==2 & Span==0.3) {
+  if (degree==2 & span==0.3) {
     message("=> Applying LOESS smoothing with DEFAULT degree and span values (Degree = 2, Span = 0.3)...")
   }
-  else if (Degree==2) {
+  else if (degree==2) {
     message("=> Applying LOESS smoothing with DEFAULT degree value (Degree = 2)...")
   }
-  else if (Span==0.3) {
+  else if (span==0.3) {
     message("=> Applying LOESS smoothing with DEFAULT span value (Span = 0.3)...")
   }
   
-  #Filter by min SNP-ratio
-  vcf.df.SNPratio <- vcf.df.SNPratio %>% dplyr::filter(SNPratio >= min_SNPratio) 
-  
   #Filter by given chromosome
-  vcf.df.SNPratio.ch <- vcf.df.SNPratio %>% dplyr::filter(ChromKey==(Chrom + 1))
+  if (length(grep(chrID, chrList)) != 0) { #True if a correct chromosome ID is entered
+    vcf.df.SNPratio.ch <- vcf.df.SNPratio.filt %>% dplyr::filter(ChromKey==grep(chrID, chrList))
+  }
+  else {
+    #Stop program if an incorrect chromosome ID is entered
+    stop("The entered 'chrID' was not found in the VCF file. Please, enter a correct one.")
+  }
   
   #Apply LOESS smoothing to SNP-ratio
-  loess.fitted <- stats::loess(SNPratio ~ POS, degree=Degree, span=Span, data=vcf.df.SNPratio.ch)
+  loess.fitted <- stats::loess(SNPratio ~ POS, degree=degree, span=span, data=vcf.df.SNPratio.ch)
   
   #Plot the chromosomal location of each SNP against the LOESS-fitted SIMPLE-ratio
-  if(missing(DPI)) {
-    
+  p <- vcf.df.SNPratio.ch %>% dplyr::mutate(smooth = loess.fitted$fitted) %>%
+    ggplot2::ggplot(aes(POS, smooth)) +
+    ggplot2::geom_point(size = 0.3) +
+    ggplot2::geom_hline(yintercept=min.SNPratio, lty=2) +
+    ggplot2::coord_cartesian(expand=FALSE) +
+    ggplot2::scale_x_continuous(labels=function(x)x/1000000) +
+    ggplot2::ylim(0, 1) +
+    ggplot2::xlab("Position (Mb)") + 
+    ggplot2::ylab("SNP-ratio") +
+    ggplot2::labs(title = paste("Chromosome", chr)) 
+  
+  if(missing(dpi)) {
     #Print message to let user know that the plot was not saved and show required arguments to save it
-    message("SNP-ratio plot is being displayed. In order to save it, please specify DPI (and Height and Width, if different values from the default ones are desired).")
+    message("SNP-ratio plot is being displayed. In order to save it, please specify dpi (and height and width, if different values from the default ones are desired).")
     
-    vcf.df.SNPratio.ch %>% dplyr::mutate(smooth = loess.fitted$fitted) %>%
-      ggplot2::ggplot(aes(POS, smooth)) +
-      ggplot2::geom_point(size = 0.3) +
-      ggplot2::geom_hline(yintercept=min_SNPratio, lty=2) +
-      ggplot2::coord_cartesian(expand=FALSE) +
-      ggplot2::scale_x_continuous(labels=function(x)x/1000000) +
-      ggplot2::ylim(0, 1) +
-      ggplot2::xlab("Position (Mb)") + 
-      ggplot2::ylab("SNP-ratio") +
-      ggplot2::labs(title = paste("Chromosome", Chrom)) 
+    #Show plot
+    p
   }
   
   else {
-    ggsave(paste0("SNPratio_ch", Chrom, ".tiff"), device = "tiff", dpi = DPI, width = Width, height = Height, units = Units)
-    if (Width==7.5 & Height==5) {
-      message("Plot was saved with DEFAULT width and height values (Width = 7.5 inches, Height = 5 inches).") 
+    #Show plot
+    p
+    
+    #Save plot
+    ggplot2::ggsave(filename = paste0(filename, ".tiff"), path = path, device = "tiff", dpi = dpi, width = width, height = height, units = units)
+    
+    #Print messages
+    if (width==7.5 & height==5) {
+      message("Plot was saved with DEFAULT width and height values (width = 7.5 inches, height = 5 inches).") 
     }
-    else if (Width==7.5) {
-      message("Plot was saved with DEFAULT width value (Width = 7.5 inches).")  
+    else if (width==7.5) {
+      message("Plot was saved with DEFAULT width value (width = 7.5 inches).")  
     }
-    else if (Height==5) {
-      message("Plot was saved with DEFAULT height value (Height = 5 inches).")  
+    else if (height==5) {
+      message("Plot was saved with DEFAULT height value (height = 5 inches).")  
+    }
+    
+    if (path==getwd()) {
+      message("Plot was saved in current working directory.")
     }
   }
 }

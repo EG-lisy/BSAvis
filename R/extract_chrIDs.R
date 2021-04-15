@@ -9,7 +9,8 @@
 #'
 #' @export extract_chrIDs
 #' @examples
-#' chrom_length <- extract_chromLength(meta=vcf_meta)
+#' chromList <- extract_chrIDs(meta=vcf_list$meta)
+
 
 extract_chrIDs <- function(meta) {
   

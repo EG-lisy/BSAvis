@@ -28,7 +28,40 @@
 #' @importFrom dplyr %>%
 #' @export deltaSNPindex
 #' @examples
-#' vcf_df_window_delta <- calc_deltaSNPindex(SNPindex.windows=vcf_df_window)
+#' ## Use default values WITHOUT saving the plot
+#' deltaSNPindex(vcf.list=vcf_list, 
+#'               wtBulk="pool_S3781_minus", 
+#'               mBulk="pool_S3781_plus", 
+#'               chrID="SL4.0ch03", 
+#'               chr=3)
+#' ## OR use default values AND save the plot
+#' deltaSNPindex(vcf.list=vcf_list, 
+#'               wtBulk="pool_S3781_minus", 
+#'               mBulk="pool_S3781_plus", 
+#'               chrID="SL4.0ch03", 
+#'               chr=3, 
+#'               dpi=1200)
+#' #OR customise default parameters
+#' deltaSNPindex(vcf.list=vcf_list, 
+#'               wtBulk="pool_S3781_minus", 
+#'               mBulk="pool_S3781_plus", 
+#'               variants="all",
+#'               min.SNPindex=0.25, 
+#'               max.SNPindex=0.8, 
+#'               min.DP=60, 
+#'               max.DP=250, 
+#'               min.GQ=98,
+#'               chrID="SL4.0ch03", 
+#'               chr=3,
+#'               windowSize=2000000, 
+#'               windowStep=20000,
+#'               filename="deltaSNPindex_chrom03", 
+#'               path="Document/Plots", 
+#'               dpi=1200,
+#'               width=20, 
+#'               height=12, 
+#'               units="cm")   
+
 
 deltaSNPindex <- function(vcf.list, wtBulk, mBulk, variants="SNP",
                           min.SNPindex=0.3, max.SNPindex=0.9, min.DP=50, max.DP=200, min.GQ=99,

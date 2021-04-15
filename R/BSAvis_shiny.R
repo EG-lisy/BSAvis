@@ -7,6 +7,10 @@
 #' 
 #' @importFrom dplyr %>%
 #' @export BSAvis_shiny
+#'
+#' @examples 
+#' BSAvis_shiny(vcf.list=vcf_list)
+
 
 BSAvis_shiny <- function(vcf.list){
 

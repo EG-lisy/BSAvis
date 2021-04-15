@@ -29,24 +29,35 @@
 #' @export plot_SNPratio 
 #' 
 #' @examples
-#' ## Plot SNP-ratio for a specific chromosome
-#' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-#'               min_SNPratio=0.1, 
-#'               Chrom=7)
-#' ## Save plot (specified resolution - tiff format)
-#' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-#'               min_SNPratio=0.1, 
-#'               Chrom=7,
-#'               DPI=1200)
-#' ## Save plot with specified width and height. The default unit is set to inches (Units="in")
-#' plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-#'               min_SNPratio=0.1, 
-#'               Chrom=7,
-#'               DPI=1200)
-#'               Height=9,
-#'               Width=6)
+#' ## Use default values WITHOUT saving the plot
+#' plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+#'               chrList=chromList, 
+#'               chrID="SL4.0ch03", 
+#'               chr=3, 
+#'               min.SNPratio=0.3) 
+#' ## OR use default values AND save the plot
+#' plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+#'               chrList=chromList, 
+#'               chrID="SL4.0ch03", 
+#'               chr=3, 
+#'               min.SNPratio=0.3,
+#'               dpi=1200) 
+#' ## OR customise default parameters
+#' plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+#'               chrList=chromList, 
+#'               chrID="SL4.0ch03", 
+#'               chr=3, 
+#'               min.SNPratio=0.3, 
+#'               degree=2, 
+#'               span=0.3, 
+#'               filename="SNPratio_ch3", 
+#'               path="Document/Plots", 
+#'               dpi=1200, 
+#'               width=20, 
+#'               height=12, 
+#'               units="cm")
 
- 
+
 plot_SNPratio <- function(vcf.df.SNPratio.filt, chrList, chrID, chr, min.SNPratio, degree=2, span=0.07, filename=paste0("plot_SNPratio_ch", chr), path=getwd(), dpi, width=7.5, height=5, units="in") {
   
   #If it is the case, print messages to let user know that default values are being used 

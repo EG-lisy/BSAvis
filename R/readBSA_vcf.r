@@ -15,7 +15,8 @@
 #' 
 #' @examples
 #' ## Read vcf file
-#' vcf_list <- readBSA_vcf(file="dataset1.vcf")
+#' vcf_list <- readBSA_vcf("dataset1_pools.vcf")
+
 
 readBSA_vcf <- function(file) {
   

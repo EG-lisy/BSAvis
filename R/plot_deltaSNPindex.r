@@ -17,19 +17,22 @@
 #'
 #' @export plot_deltaSNPindex
 #' @examples
-#' \strong{Plot SNP-index}
-#' plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-#'                    Chrom=3)
-#' \strong{Save plot (specified resolution - tiff format)}
-#' plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-#'                    Chrom=3,
-#'                    DPI=1200)
-#' \strong{Save plot with specified width and height. The default unit is set to inches (Units="in")}
-#' plot_deltaSNPindex(vcf.df.bulks=vcf_df_window_delta,
-#'                    Chrom=3,
-#'                    DPI=1200,
-#'                    Height=9,
-# '                   Width=6)
+#' ## Use default values WITHOUT saving the plot
+#' plot_deltaSNPindex(deltaSNPindex.windows=deltaSNPindex_windows, 
+#'                    chr=3)
+#' ## OR use default values AND save the plot
+#' plot_deltaSNPindex(deltaSNPindex.windows=deltaSNPindex_windows, 
+#'                    chr=3,
+#'                    dpi=1200)
+#' ## OR customise default parameters
+#' plot_deltaSNPindex(deltaSNPindex.windows=deltaSNPindex_windows, 
+#'                    chr=3,
+#'                    filename="deltaSNPindex_ch3", 
+#'                    path="Document/Plots", 
+#'                    dpi=1200, 
+#'                    width=20, 
+#'                    height=12, 
+#'                    units="cm")
 
 
 plot_deltaSNPindex <- function(deltaSNPindex.windows, chr, filename=paste0("plot_deltaSNPindex_ch", chr), path=getwd(), dpi, width=7.5, height=5, units="in"){

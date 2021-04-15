@@ -13,15 +13,12 @@
 #' @export filter_SNPratio
 #' @examples
 #' ## Default parameters
-#' vcf_df_filter <- filter_variants(vcf.df.SNPratios=vcf_df_SNPratio)
+#' vcf_df_SNPratio_filt <- filter_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio)
 #' ## Custom parameters
-#' vcf_df_filter <- filter_variants(vcf.df.SNPratios=vcf_df_SNPratio, 
-#'                                  min.SNPratio=0.3, 
-#'                                  max.SNPratio=0.9, 
-#'                                  min.DP=50, 
-#'                                  max.DP=200, 
-#'   
-
+#' vcf_df_SNPratio_filt <- filter_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
+#'                                         min.SNPratio=0.3, 
+#'                                         min.DP=60, 
+#'                                         max.DP=250)
 
 
 filter_SNPratio <- function(vcf.df.SNPratio, min.SNPratio=0.1, min.DP=50, max.DP=200){

@@ -26,7 +26,38 @@
 #' @importFrom dplyr %>%
 #' @export SNPratio
 #' @examples
-#' vcf_df_window_delta <- calc_deltaSNPindex(SNPindex.windows=vcf_df_window)
+#' ## Use default values WITHOUT saving the plot
+#' SNPratio(vcf.list=vcf_list, 
+#'          wtBulk="pool_S3781_minus", 
+#'          mBulk="pool_S3781_plus", 
+#'          chrID="SL4.0ch03", 
+#'          chr=3)
+#' ## OR use default values AND save the plot
+#' SNPratio(vcf.list=vcf_list, 
+#'          wtBulk="pool_S3781_minus", 
+#'          mBulk="pool_S3781_plus", 
+#'          chrID="SL4.0ch03", 
+#'          chr=3, 
+#'          dpi=1200)
+#' ## OR customise default parameters
+#' SNPratio(vcf.list=vcf_list, 
+#'          wtBulk="pool_S3781_minus", 
+#'          mBulk="pool_S3781_plus", 
+#'          variants="all",
+#'          min.SNPratio=0.3, 
+#'          min.DP=60, 
+#'          max.DP=250,
+#'          chrID="SL4.0ch03", 
+#'          chr=3, 
+#'          degree=1, 
+#'          span=0.05, 
+#'          filename="deltaSNPindex_chrom03", 
+#'          path="Document/Plots", 
+#'          dpi=1200, 
+#'          width=20, 
+#'          height=12, 
+#'          units="cm")
+
 
 SNPratio <- function(vcf.list, wtBulk, mBulk, variants="SNP",
                      min.SNPratio=0.1, min.DP=50, max.DP=200,

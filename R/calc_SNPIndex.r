@@ -17,16 +17,17 @@
 #'
 #' @export calc_SNPindex
 #' @examples
-#' ## Calculate SNP-index of both bulks (by default, only SNPs are considered)
-#' vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
-#'                                wtBulk="pool_S3781_minus", 
-#'                                mBulk="pool_S3781_plus")
-#'
-#' ## Calculate SNP-index considering InDels and SNPs
-#' vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_df, 
+#' ## Calculate SNP-index for both bulks (only SNPs will be considered)
+#' vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_list$df, 
 #'                                  wtBulk="pool_S3781_minus", 
-#'                                 mBulk="pool_S3781_plus",
-#'                                  variants="all")
+#'                                  mBulk="pool_S3781_plus") 
+#'
+#' ## Calculate SNP-index considering both InDels and SNPs
+#' vcf_df_SNPindex <- calc_SNPindex(vcf.df=vcf_list$df, 
+#'                                  wtBulk="pool_S3781_minus", 
+#'                                  mBulk="pool_S3781_plus",
+#'                                  variants="all") 
+
 
 calc_SNPindex <- function(vcf.df, wtBulk, mBulk, variants="SNP") {
   

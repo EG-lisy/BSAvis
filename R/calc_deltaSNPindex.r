@@ -11,8 +11,8 @@
 #' @importFrom dplyr %>%
 #' @export calc_deltaSNPindex
 #' @examples
-#' vcf_df_window_delta <- calc_deltaSNPindex(SNPindex.windows=vcf_df_window)
-
+#' deltaSNPindex_windows <- calc_deltaSNPindex(SNPindex.windows=SNPindex_windows) 
+ 
 
 calc_deltaSNPindex <- function(SNPindex.windows) {
   

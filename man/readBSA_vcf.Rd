@@ -20,5 +20,5 @@ Allelic depths (AD) get split into reference and alterate AD values ("AD_ref" an
 }
 \examples{
 ## Read vcf file
-vcf_list <- readBSA_vcf(file="dataset1.vcf")
+vcf_list <- readBSA_vcf("dataset1_pools.vcf")
 }

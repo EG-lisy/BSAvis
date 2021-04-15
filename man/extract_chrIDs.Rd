@@ -16,5 +16,5 @@ Chromosome list
 This function allows to extract the chromosome IDs, based on the meta information contained in the vcf file.
 }
 \examples{
-chrom_length <- extract_chromLength(meta=vcf_meta)
+chromList <- extract_chrIDs(meta=vcf_list$meta)
 }

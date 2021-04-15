@@ -40,17 +40,17 @@ Whenever the dpi parameter gets specified, the plot will be saved in .TIF format
 Always refer to journal-specific guidelines.}
 }
 \examples{
-## Plot SNP-index of both bulks (wild-type and mutant)
-plot_SNPindex(SNPindex.windows=vcf_df_window,
-              chr=3)
-## Save plot (specified resolution - tiff format)
-plot_SNPindex(vcf.df.bulks=vcf_df_window,
+## OR use default values AND save the plot
+plot_SNPindex(SNPindex.windows=SNPindex_windows, 
               chr=3,
-              dpi=1200)
-## Save plot with specified width and height. The default unit is set to inches (units="in")
-plot_SNPindex(vcf.df.bulks=vcf_df_window,
-              chr=3,
-              dpi=1200,
-              height=9,
-              width=6)
+              dpi=1200) 
+## OR customise default parameters
+plot_SNPindex(SNPindex.windows=SNPindex_windows, 
+              chr=3, 
+              filename="SNPindex_ch3", 
+              path="Document/Plots", 
+              dpi=1200, 
+              width=20, 
+              height=12, 
+              units="cm") 
 }

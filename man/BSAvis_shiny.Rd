@@ -12,3 +12,6 @@ BSAvis_shiny(vcf.list)
 \description{
 Run the interactive BSA visualisation tool.
 }
+\examples{
+BSAvis_shiny(vcf.list=vcf_list)
+}

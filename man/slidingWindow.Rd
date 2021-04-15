@@ -34,12 +34,16 @@ This function allows to calculate the sliding window based on the chromosome len
 A data frame containing the mean SNP-index values of both bulks gets generated.
 }
 \examples{
-## Default function
-vcf_df_window <- slidingWindow(Chrom=3,
-                               chromLength=chrom_length,
-                               windowSize=1000000,
-                               windowStep=10000,
-                               df=vcf_df_filter)
-## Custom function
-
+## Default parameters
+SNPindex_windows <- slidingWindow(meta=vcf_list$meta, 
+                                  chrList=chromList, 
+                                  chrID="SL4.0ch03",  
+                                  vcf.df.SNPindex.filt=vcf_df_SNPindex_filt)
+## Custom parameters
+SNPindex_windows <- slidingWindow(meta=vcf_list$meta, 
+                                  chrList=chromList, 
+                                  chrID="SL4.0ch03", 
+                                  windowSize=2000000, 
+                                  windowStep=20000, 
+                                  vcf.df.SNPindex.filt=vcf_df_SNPindex_filt)
 }

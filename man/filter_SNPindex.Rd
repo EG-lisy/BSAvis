@@ -34,12 +34,12 @@ This function allows to filter variants for the SNP-index method.
 }
 \examples{
 ## Default parameters
-vcf_df_filter <- filter_variants(vcf.df.SNPindexs=vcf_df_SNPindex)
+vcf_df_SNPindex_filt <- filter_SNPindex(vcf.df.SNPindex=vcf_df_SNPindex)
 ## Custom parameters
-vcf_df_filter <- filter_variants(vcf.df.SNPindexs=vcf_df_SNPindex, 
-                                 min.SNPindex=0.3, 
-                                 max.SNPindex=0.9, 
-                                 min.DP=50, 
-                                 max.DP=200, 
-                                 min.GQ=99)
+vcf_df_SNPindex_filt <- filter_SNPindex(vcf.df.SNPindex=vcf_df_SNPindex, 
+                                        min.SNPindex=0.25, 
+                                        max.SNPindex=0.8, 
+                                        min.DP=60, 
+                                        max.DP=250, 
+                                        min.GQ=98)
 }

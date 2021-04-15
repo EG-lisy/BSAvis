@@ -17,5 +17,5 @@ This function is used to calculate the delta(SNP index) using the calculated mea
 \deqn{mean_M_SNPindex - mean_WT_SNPindex.WT}
 }
 \examples{
-vcf_df_window_delta <- calc_deltaSNPindex(SNPindex.windows=vcf_df_window)
+deltaSNPindex_windows <- calc_deltaSNPindex(SNPindex.windows=SNPindex_windows) 
 }

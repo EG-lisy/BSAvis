@@ -57,22 +57,33 @@ Whenever the DPI parameter gets specified, the plot will be saved in .TIF format
 Always refer to journal-specific guidelines.}
 }
 \examples{
-## Plot SNP-ratio for a specific chromosome
-plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-              min_SNPratio=0.1, 
-              Chrom=7)
-## Save plot (specified resolution - tiff format)
-plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-              min_SNPratio=0.1, 
-              Chrom=7,
-              DPI=1200)
-## Save plot with specified width and height. The default unit is set to inches (Units="in")
-plot_SNPratio(vcf.df.SNPratio=vcf_df_SNPratio, 
-              min_SNPratio=0.1, 
-              Chrom=7,
-              DPI=1200)
-              Height=9,
-              Width=6)
+## Use default values WITHOUT saving the plot
+plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+              chrList=chromList, 
+              chrID="SL4.0ch03", 
+              chr=3, 
+              min.SNPratio=0.3) 
+## OR use default values AND save the plot
+plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+              chrList=chromList, 
+              chrID="SL4.0ch03", 
+              chr=3, 
+              min.SNPratio=0.3,
+              dpi=1200) 
+## OR customise default parameters
+plot_SNPratio(vcf.df.SNPratio.filt=vcf_df_SNPratio_filt, 
+              chrList=chromList, 
+              chrID="SL4.0ch03", 
+              chr=3, 
+              min.SNPratio=0.3, 
+              degree=2, 
+              span=0.3, 
+              filename="SNPratio_ch3", 
+              path="Document/Plots", 
+              dpi=1200, 
+              width=20, 
+              height=12, 
+              units="cm")
 }
 \references{
 Wachsman et al., 2017

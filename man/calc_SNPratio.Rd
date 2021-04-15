@@ -24,9 +24,15 @@ This function allows to calculate the SNP-ratio between two bulks (M/WT), as fol
 Note that the user can select specific variants to consider, by setting the "Variants" parameter to "SNP" (default) or "all" (respectively referring to SNPs or InDels+SNPs).
 }
 \examples{
-vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_df, 
+## Calculate SNP-index for both bulks (only SNPs will be considered)
+vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_list$df, 
                                  wtBulk="pool_S3781_minus", 
-                                 mBulk="pool_S3781_plus")
+                                 mBulk="pool_S3781_plus") 
+## Calculate SNP-index considering both InDels and SNPs
+vcf_df_SNPratio <- calc_SNPratio(vcf.df=vcf_list$df, 
+                                 wtBulk="pool_S3781_minus", 
+                                 mBulk="pool_S3781_plus", 
+                                 variants="all")
 }
 \references{
 Wachsman et al., 2017

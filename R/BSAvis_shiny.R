@@ -25,7 +25,7 @@ BSAvis_shiny <- function(vcf.list){
       fluidRow(
       id = "body",
       column(width = 12, hr(),
-        HTML('<center><img src="BSAvis_logo.png" width="200"></center>'),
+        HTML('<center><img src="www/BSAvis_logo.png" width="200"></center>'),
         h5("Welcome to BSAvis, an Bulk Segregant Analysis (BSA) interactive tool.", align =
              "center")
       ),

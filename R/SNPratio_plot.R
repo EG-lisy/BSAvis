@@ -24,23 +24,23 @@
 #' @param units size units (default="in")
 #' 
 #' @importFrom dplyr %>%
-#' @export SNPratio
+#' @export SNPratio_plot
 #' @examples
 #' ## Use default values WITHOUT saving the plot
-#' SNPratio(vcf.list=vcf_list, 
+#' SNPratio_plot(vcf.list=vcf_list, 
 #'          wtBulk="pool_S3781_minus", 
 #'          mBulk="pool_S3781_plus", 
 #'          chrID="SL4.0ch03", 
 #'          chr=3)
 #' ## OR use default values AND save the plot
-#' SNPratio(vcf.list=vcf_list, 
+#' SNPratio_plot(vcf.list=vcf_list, 
 #'          wtBulk="pool_S3781_minus", 
 #'          mBulk="pool_S3781_plus", 
 #'          chrID="SL4.0ch03", 
 #'          chr=3, 
 #'          dpi=1200)
 #' ## OR customise default parameters
-#' SNPratio(vcf.list=vcf_list, 
+#' SNPratio_plot(vcf.list=vcf_list, 
 #'          wtBulk="pool_S3781_minus", 
 #'          mBulk="pool_S3781_plus", 
 #'          variants="all",
@@ -59,9 +59,9 @@
 #'          units="cm")
 
 
-SNPratio <- function(vcf.list, wtBulk, mBulk, variants="SNP",
+SNPratio_plot <- function(vcf.list, wtBulk, mBulk, variants="SNP",
                      min.SNPratio=0.1, min.DP=50, max.DP=200,
-                     chrID, chr, degree=2, span=0.3, 
+                     chrID, chr, degree=2, span=0.07, 
                      filename=paste0("plot_SNPratio_ch", chr), path=getwd(), 
                      dpi, width=7.5, height=5, units="in"){
   

@@ -15,7 +15,7 @@
 #' @importFrom dplyr %>%
 #' @export shinyPlot_SNPratio 
 
-shinyPlot_SNPratio <- function(vcf.df.SNPratio.filt, chrList, chrID, chr, min.SNPratio, degree=2, span=0.3, ranges) {
+shinyPlot_SNPratio <- function(vcf.df.SNPratio.filt, chrList, chrID, chr, min.SNPratio, degree=2, span=0.07, ranges) {
   
   #The argument 'ranges' will allow to zoom in the plots while using the shiny App.
   

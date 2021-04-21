@@ -23,24 +23,14 @@ BSAvis_shiny <- function(vcf.list){
       # ==============================================================================
       
       fluidRow(
-        id = "body",
-        column(
-          width = 12, 
-          hr(), 
-          h1(
-            strong("BSAvis"),
-            align = "center",
-            br(),
-            h5("Please, select a method", align = "center")
-        )),
-        column(
-          width = 12,
-          actionButton("snpindex", "SNP-index"),
-          actionButton("deltasnp", "SNP-ratio"),
-          align = "center"
-        ),
-        column(width = 12, hr())
+      id = "body",
+      column(width = 12, hr(),
+        HTML('<center><img src="BSAvis_logo.png" width="200"></center>'),
+        h5("Welcome to BSAvis, an Bulk Segregant Analysis (BSA) interactive tool.", align =
+             "center")
       ),
+      column(width = 12, hr())
+    ),
       
       # ==============================================================================
       # FIRST METHOD
@@ -333,13 +323,29 @@ BSAvis_shiny <- function(vcf.list){
     # ==============================================================================
     
     # -------------------------------- SNP-Index ----------------------------------- 
-    #Create reactive expression to plot SNP-index
+ 
+    
+    # -------------------------------- delta(SNP-Index) -----------------------------------
+ #Create reactive expression to plot SNP-index
     SNPindexPlot <- reactive({
 
+      #Assign value to chosenVariants based on user input regarding the type of variants to show
       chosenVariants <- ifelse(input$variants_snpindex == 1, "SNP", "all")
-      WTalpha <- ifelse(input$bulk == 0 | input$bulk == 1, 1, 0)
-      Malpha <- ifelse(input$bulk == 0 | input$bulk == 2, 1, 0)
       
+      #Assign value to chosenBulk based on user input regarding which bulk's SNP-index plot to visualise
+      if (input$bulk==0) {
+        chosenBulk <- 0
+      }
+      
+      else if (input$bulk==1) {
+        chosenBulk <- 1
+      }
+      
+      else if (input$bulk==2) {
+        chosenBulk <- 2
+      }
+      
+      #Call SNP-index plot function
       BSAvis::shiny_SNPindex(vcf.list = vcf.list, 
                              wtBulk = input$wtMethod1, 
                              mBulk = input$mMethod1, 
@@ -353,36 +359,8 @@ BSAvis_shiny <- function(vcf.list){
                              chr = input$chrMethod1, 
                              windowSize = as.numeric(input$window), 
                              windowStep = as.numeric(input$step), 
-                             wtAlpha = WTalpha, 
-                             mAlpha = Malpha, 
+                             bulk = chosenBulk, 
                              ranges = ranges1)
-    })
-    
-    #Add SNP-index plot to its corresponding place in the UI
-    output$snp_index <- renderPlot({
-      SNPindexPlot()
-    })
-    
-    # -------------------------------- delta(SNP-Index) -----------------------------------
-    #Create reactive expression to plot delta(SNP-index)
-    deltaSNPindexPlot <- reactive({
-
-      chosenVariants <- ifelse(input$variants_snpindex == 1, "SNP", "all")
-      
-      BSAvis::shiny_deltaSNPindex(vcf.list = vcf.list, 
-                                  wtBulk = input$wtMethod1, 
-                                  mBulk = input$mMethod1, 
-                                  variants = chosenVariants,
-                                  min.SNPindex = input$min_snpindex, 
-                                  max.SNPindex = input$max_snpindex, 
-                                  min.DP = input$min_DP1, 
-                                  max.DP = input$max_DP1, 
-                                  min.GQ = input$min_GQ,
-                                  chrID = input$chrMethod1, 
-                                  chr = input$chrMethod1, 
-                                  windowSize = as.numeric(input$window), 
-                                  windowStep = as.numeric(input$step), 
-                                  ranges = ranges2)
     })
     
     #Add delta(SNP-index) plot to its corresponding place in the UI

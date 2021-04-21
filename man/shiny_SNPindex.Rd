@@ -18,8 +18,7 @@ shiny_SNPindex(
   chr,
   windowSize,
   windowStep,
-  wtAlpha,
-  mAlpha,
+  bulk,
   ranges
 )
 }
@@ -50,9 +49,7 @@ shiny_SNPindex(
 
 \item{windowStep}{window step (default=10000)}
 
-\item{wtAlpha}{wt position}
-
-\item{mAlpha}{m position}
+\item{bulk}{bulk/bulks to take into consideration}
 
 \item{ranges}{axes ranges (x,y)}
 }

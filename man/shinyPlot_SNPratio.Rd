@@ -11,7 +11,7 @@ shinyPlot_SNPratio(
   chr,
   min.SNPratio,
   degree = 2,
-  span = 0.3,
+  span = 0.07,
   ranges
 )
 }

@@ -4,20 +4,12 @@
 \alias{shinyPlot_SNPindex}
 \title{Shiny: Plot SNP-indices}
 \usage{
-shinyPlot_SNPindex(
-  vcf.df.window.SNPindex,
-  chr,
-  wtAlpha = 1,
-  mAlpha = 1,
-  ranges
-)
+shinyPlot_SNPindex(vcf.df.window.SNPindex, chr, bulk, ranges)
 }
 \arguments{
 \item{chr}{chrosome ID}
 
-\item{wtAlpha}{wild-type graph (default=1)}
-
-\item{mAlpha}{mutant graph (default=1)}
+\item{bulk}{bulk/bulks to take into consideration when plotting}
 
 \item{ranges}{axes ranges (x,y)}
 

@@ -61,14 +61,14 @@
 plot_SNPratio <- function(vcf.df.SNPratio.filt, chrList, chrID, chr, min.SNPratio, degree=2, span=0.07, filename=paste0("plot_SNPratio_ch", chr), path=getwd(), dpi, width=7.5, height=5, units="in") {
   
   #If it is the case, print messages to let user know that default values are being used 
-  if (degree==2 & span==0.3) {
-    message("=> Applying LOESS smoothing with DEFAULT degree and span values (Degree = 2, Span = 0.3)...")
+  if (degree==2 & span==0.07) {
+    message("=> Applying LOESS smoothing with DEFAULT degree and span values (Degree = 2, Span = 0.07)...")
   }
   else if (degree==2) {
     message("=> Applying LOESS smoothing with DEFAULT degree value (Degree = 2)...")
   }
-  else if (span==0.3) {
-    message("=> Applying LOESS smoothing with DEFAULT span value (Span = 0.3)...")
+  else if (span==0.07) {
+    message("=> Applying LOESS smoothing with DEFAULT span value (Span = 0.07)...")
   }
   
   #Filter by given chromosome

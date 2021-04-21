@@ -26,23 +26,23 @@
 #' @param units size units (default="in")
 #' 
 #' @importFrom dplyr %>%
-#' @export deltaSNPindex
+#' @export deltaSNPindex_plot
 #' @examples
 #' ## Use default values WITHOUT saving the plot
-#' deltaSNPindex(vcf.list=vcf_list, 
+#' deltaSNPindex_plot(vcf.list=vcf_list, 
 #'               wtBulk="pool_S3781_minus", 
 #'               mBulk="pool_S3781_plus", 
 #'               chrID="SL4.0ch03", 
 #'               chr=3)
 #' ## OR use default values AND save the plot
-#' deltaSNPindex(vcf.list=vcf_list, 
+#' deltaSNPindex_plot(vcf.list=vcf_list, 
 #'               wtBulk="pool_S3781_minus", 
 #'               mBulk="pool_S3781_plus", 
 #'               chrID="SL4.0ch03", 
 #'               chr=3, 
 #'               dpi=1200)
 #' #OR customise default parameters
-#' deltaSNPindex(vcf.list=vcf_list, 
+#' deltaSNPindex_plot(vcf.list=vcf_list, 
 #'               wtBulk="pool_S3781_minus", 
 #'               mBulk="pool_S3781_plus", 
 #'               variants="all",
@@ -63,7 +63,7 @@
 #'               units="cm")   
 
 
-deltaSNPindex <- function(vcf.list, wtBulk, mBulk, variants="SNP",
+deltaSNPindex_plot<- function(vcf.list, wtBulk, mBulk, variants="SNP",
                           min.SNPindex=0.3, max.SNPindex=0.9, min.DP=50, max.DP=200, min.GQ=99,
                           chrID, chr, windowSize=1000000, windowStep=10000, 
                           filename=paste0("plot_deltaSNPindex_ch", chr), path=getwd(), 

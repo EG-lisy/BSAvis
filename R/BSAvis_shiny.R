@@ -422,7 +422,7 @@ BSAvis_shiny <- function(vcf.list){
     
     #Add SNP-ratio plot to its corresponding place in the UI
     output$snp_ratio <- renderPlot({
-      SNPratio_plot()
+      SNPratioPlot()
     })
     
     # ==============================================================================

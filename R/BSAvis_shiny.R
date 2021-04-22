@@ -311,7 +311,6 @@ BSAvis_shiny <- function(vcf.list){
     )
   
   
-  
   #Server
   server <- function(input, output) {
     
@@ -326,10 +325,7 @@ BSAvis_shiny <- function(vcf.list){
     # ==============================================================================
     
     # -------------------------------- SNP-Index ----------------------------------- 
- 
-    
-    # -------------------------------- delta(SNP-Index) -----------------------------------
- #Create reactive expression to plot SNP-index
+    #Create reactive expression to plot SNP-index
     SNPindexPlot <- reactive({
 
       #Assign value to chosenVariants based on user input regarding the type of variants to show
@@ -366,6 +362,35 @@ BSAvis_shiny <- function(vcf.list){
                              ranges = ranges1)
     })
     
+    #Add SNP-index plot to its corresponding place in the UI
+    output$snp_index <- renderPlot({
+      SNPindexPlot()
+    })
+    
+    # -------------------------------- delta(SNP-Index) -----------------------------------
+    #Create reactive expression to plot delta(SNP-index)
+    deltaSNPindexPlot <- reactive({
+
+ 
+
+      chosenVariants <- ifelse(input$variants_snpindex == 1, "SNP", "all")
+      
+      BSAvis::shiny_deltaSNPindex(vcf.list = vcf.list, 
+                                  wtBulk = input$wtMethod1, 
+                                  mBulk = input$mMethod1, 
+                                  variants = chosenVariants,
+                                  min.SNPindex = input$min_snpindex, 
+                                  max.SNPindex = input$max_snpindex, 
+                                  min.DP = input$min_DP1, 
+                                  max.DP = input$max_DP1, 
+                                  min.GQ = input$min_GQ,
+                                  chrID = input$chrMethod1, 
+                                  chr = input$chrMethod1, 
+                                  windowSize = as.numeric(input$window), 
+                                  windowStep = as.numeric(input$step), 
+                                  ranges = ranges2)
+    })
+    
     #Add delta(SNP-index) plot to its corresponding place in the UI
     output$delta_snp_index <- renderPlot({
       deltaSNPindexPlot()
@@ -375,6 +400,7 @@ BSAvis_shiny <- function(vcf.list){
     # SECOND METHOD
     #                               SNP-ratio PLOT
     # ==============================================================================  
+    
     #Create reactive expression to plot SNP-ratio
     SNPratioPlot <- reactive({
 
@@ -396,7 +422,7 @@ BSAvis_shiny <- function(vcf.list){
     
     #Add SNP-ratio plot to its corresponding place in the UI
     output$snp_ratio <- renderPlot({
-      SNPratioPlot()
+      SNPratio_plot()
     })
     
     # ==============================================================================

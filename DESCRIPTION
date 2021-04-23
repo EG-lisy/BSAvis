@@ -1,7 +1,7 @@
 Package: BSAvis
 Type: Package
 Title: Bulk Segregant Analysis - Visualisation Package
-Version: 0.0.0.1
+Version: 1.0
 Date: 24-3-2021
 Authors@R: c(
     person("Claudia", "Rey Carrascosa", email= "claudia.m.rey-carrascosa@cranfield.ac.uk", role = "aut"),

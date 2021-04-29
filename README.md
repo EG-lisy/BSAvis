@@ -64,8 +64,8 @@ SOFTWARE.
 
 BSAvis (Version 1.0) was developped by:
 
-Elisabetta Galatola, Rebecca Guy, Weiyi Huang, Sweta Jajoriya, Claudia Rey-Carrascosa
+_Elisabetta Galatola, Rebecca Guy, Weiyi Huang, Sweta Jajoriya, Claudia Rey-Carrascosa_
 
-Applied Bioinformatics MSc
-Cranfield University - Cranfield, Bedford, UK
-Academic Year: 2020-2021
+_Applied Bioinformatics MSc_<br>
+_Cranfield University - Cranfield, Bedford, UK_<br>
+_Academic Year: 2020-2021_

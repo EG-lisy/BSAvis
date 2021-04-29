@@ -36,7 +36,7 @@ library(BSAvis)
 ?shinyPlot_SNPratio
 ```
 
-# Licence
+# License
 
 MIT License
 

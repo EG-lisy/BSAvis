@@ -1,5 +1,5 @@
 # BSAvis Package
-Please refer to [this repository](https://github.com/FadyMohareb/BSAvis_GP_2020) for a better understanding of the package.
+Please refer to [this page](https://github.com/FadyMohareb/BSAvis_GP_2020) for a better understanding of the package.
 
 ```R
 #Install BSAvis package
@@ -36,11 +36,21 @@ library(BSAvis)
 ?shinyPlot_SNPratio
 ```
 
-# License
+# Authors
 
-MIT License
+BSAvis (Version 1.0) was developped by:
 
-Copyright (c) 2021 Mohareb's Lab
+_Elisabetta Galatola, Rebecca Guy, Weiyi Huang, Sweta Jajoriya, Claudia Rey-Carrascosa_
+
+_Applied Bioinformatics MSc_<br>
+_Cranfield University - Cranfield, Bedford, UK_<br>
+_Academic Year: 2020-2021_
+
+
+### License
+```
+ MIT License
+ Copyright (c) 2021 Mohareb's Lab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -59,13 +69,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-# Authors
-
-BSAvis (Version 1.0) was developped by:
-
-_Elisabetta Galatola, Rebecca Guy, Weiyi Huang, Sweta Jajoriya, Claudia Rey-Carrascosa_
-
-_Applied Bioinformatics MSc_<br>
-_Cranfield University - Cranfield, Bedford, UK_<br>
-_Academic Year: 2020-2021_
+```

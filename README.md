@@ -1,5 +1,5 @@
 # BSAvis Package
-Please refer to [this page](https://github.com/FadyMohareb/BSAvis_GP_2020) for a better understanding of the package.
+Please refer to [this repository](https://github.com/FadyMohareb/BSAvis_GP_2020) for a better understanding of the package.
 
 ```R
 #Install BSAvis package
@@ -46,8 +46,6 @@ _Applied Bioinformatics MSc_<br>
 _Cranfield University - Cranfield, Bedford, UK_<br>
 _Academic Year: 2020-2021_
 
-
-### License
 ```
  MIT License
  Copyright (c) 2021 Mohareb's Lab

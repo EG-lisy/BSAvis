@@ -38,7 +38,7 @@ library(BSAvis)
 
 # Authors
 
-BSAvis (Version 1.0) was developped by:
+BSAvis (Version 1.0) was developed by:
 
 _Elisabetta Galatola, Rebecca Guy, Weiyi Huang, Sweta Jajoriya, Claudia Rey-Carrascosa_
 
